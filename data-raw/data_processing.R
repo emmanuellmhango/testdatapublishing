@@ -17,7 +17,9 @@ data_in <- readr::read_csv("data-raw/testdatapublishing.csv")
 
 # Tidy data --------------------------------------------------------------------
 ## Clean the raw data into a tidy format here
-testdatapublishing[] <- lapply(data_in,function(x) {
+testdatapublishing <- data_in
+
+testdatapublishing[] <- lapply(testdatapublishing,function(x) {
   if (is.character(x)) {
     stringi::stri_enc_toutf8(x)
   } else {
